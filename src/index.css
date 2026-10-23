@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-yellow: #ffe500;
+  --color-brand-red: #e3262b;
+  --color-brand-dark: #1a0f0a;
+  --color-brand-cream: #fff8d6;
+  --font-display: "Luckiest Guy", cursive;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-spin-slow: spin 30s linear infinite;
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-pop: pop 0.35s ease-out;
+  --animate-slide-up: slide-up 0.35s ease-out;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(8deg); }
+  }
+  @keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.35); }
+    100% { transform: scale(1); }
+  }
+  @keyframes slide-up {
+    from { transform: translateY(24px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 8rem;
+}
+
+body {
+  @apply bg-brand-cream text-brand-dark font-sans antialiased;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 2px var(--color-brand-dark);
+  paint-order: stroke fill;
+}
+
+.shadow-brutal {
+  box-shadow: 5px 5px 0 0 var(--color-brand-dark);
+}
+
+.shadow-brutal-sm {
+  box-shadow: 3px 3px 0 0 var(--color-brand-dark);
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(26, 15, 10, 0.12) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
